@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WOLFLIX</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <script src="script.js"></script>
+
+    <nav>
+        <div class="left">
+            <div class="logo">
+                <a href="#"><img src="./img/logo.png" alt=""></a>
+            </div>
+            <div class="mobile-menu">메뉴</div>
+            <ul class="menu-list">
+                <li>
+                    <a href="#">홈</a>
+                </li>
+                <li>
+                    <a href="#">시리즈</a>
+                </li>
+                <li>
+                    <a href="#">베스트</a>
+                </li>
+                <li>
+                    <a href="#">풀영상</a>
+                </li>
+                <li>
+                    <a href="../woltify/t1/index.html">월해뮤직</a>
+                </li>
+            </ul>
+        </div>
+        <div class="right">
+            <div class="icon search">
+                <div class="search-bar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="제목, 사람, 장르"/>
+                </div>
+            </div>
+            <div class="icon kids">
+                <a href="../index.html">HOME</a>
+            </div>
+            <div class="icon bell">
+                <a href="#"><i class="fa-solid fa-bell"></i></a>
+            </div>
+            <div class="icon profile">
+                <a href="https://www.twitch.tv/wolhae2">
+                    <div class="avatar-box"></div>
+                    <i class="fa-solid fa-caret-down"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <div class="video">
+            <video class="bv" src="./vdo/8넷상_감염.mp4" autoplay muted loop></video>
+        </div>
+        <div class="description">
+            <h1>넷상감염</h1>
+            <h3>코로나가 유행하던 시기</h3>
+            <p>
+              김월해는 넷상 감염에 대하여 얘기하는데..,
+            </p>
+            <div class="buttons">
+                <button class="play"><i class="fa-solid fa-play"></i><span>재생</span></button>
+                <button class="detail"><i class="fa-solid fa-circle-info"></i>상세 정보</button>
+            </div>
+        </div>
+        <div class="age-info">
+            <i class="fa-solid fa-rotate-right"></i>
+            <div class="age">15+</div>
+        </div>
+    </main>
+    <section>
+        <div class="content-list">
+            <h1>미디어</h1>
+            <div class="slider">
+                <script>
+                    const videoData = [
+                      { videoSrc: "./vdo/wogawoga.mp4", alt: "Video 1" },
+                      { videoSrc: "./vdo/2314689aac311642.mp4", alt: "Video 2" },
+                      { videoSrc: "./vdo/65eadf303de8085f-1.mp4", alt: "Video 3" },
+                      { videoSrc: "./vdo/778e10dffc786fb9.mp4", alt: "Video 4" },
+                      { videoSrc: "./vdo/bb8679579eec519c.mp4", alt: "Video 5" },
+                      { videoSrc: "./vdo/1대마월.mp4", alt: "Video 6" },
+                      { videoSrc: "./vdo/2친없월.mp4", alt: "Video 7" },
+                      { videoSrc: "./vdo/3시끄러.mp4", alt: "Video 8" },
+                      { videoSrc: "./vdo/4사람이_아닌월.mp4", alt: "Video 9" },
+                      { videoSrc: "./vdo/5클립_지우는_클립.mp4", alt: "Video 10" },
+                      { videoSrc: "./vdo/6진정해.mp4", alt: "Video 11" },
+                      { videoSrc: "./vdo/7클립_만들기.mp4", alt: "Video 12" },
+                      { videoSrc: "./vdo/8넷상_감염.mp4", alt: "Video 13" },
+                      { videoSrc: "./vdo/9확진자_주제에.mp4", alt: "Video 14" },
+                      { videoSrc: "./vdo/10캌퇴.mp4", alt: "Video 15" },
+                      { videoSrc: "./vdo/11바보월.mp4", alt: "Video 16" },
+                      { videoSrc: "./vdo/12나름_소곤소곤.mp4", alt: "Video 17" },
+
+                      // video추가
+                    ];
+                  
+                    const slider = document.querySelector('.slider');
+                  
+                    function createVideoItem(videoSrc, alt) {
+                      const videoItem = document.createElement('div');
+                      videoItem.classList.add('video-group');
+                  
+                      videoItem.innerHTML = `
+                        <div class="item">
+                          <video controlslist="nodownload" muted onclick="togglePopup(this)" src="${videoSrc}" alt="${alt}"></video>
+                        </div>
+                        <div class="popup">
+                          <button onclick="togglePopup(this.parentElement.previousElementSibling.querySelector('video'))">닫기</button>
+                          <video controls loop>
+                            <source src="${videoSrc}" type="video/mp4">
+                          </video>
+                        </div>
+                      `;
+                  
+                      return videoItem;
+                    }
+                  
+                    function renderVideos(videoList) {
+                      videoList.forEach((video) => {
+                        const { videoSrc, alt } = video;
+                        const videoGroup = createVideoItem(videoSrc, alt);
+                        slider.appendChild(videoGroup);
+                      });
+                    }
+                  
+                    renderVideos(videoData);
+                  
+                    function togglePopup(videoElement) {
+                      const popup = videoElement.parentElement.nextElementSibling;
+                      if (popup.style.display === 'block') {
+                        popup.style.display = 'none';
+                        videoElement.controls = false;
+                      } else {
+                        popup.style.display = 'block';
+                        videoElement.controls = true;
+                      }
+                    }
+                  </script>
+            </div>
+            <div class="prev"><i class="fa-solid fa-angle-right prev-arrow"></i></div>
+            <div class="next"><i class="fa-solid fa-angle-right"></i></div>
+        </div>
+        <div class="content-list">
+            <h1>풀영상</h1>
+            <div class="slider">
+                <iframe width="13%" src="https://www.youtube.com/embed/d63aVzLihVY?si=t8ri0ktEH51KtV6h" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <iframe width="13%" src="https://www.youtube.com/embed/s8oAbCOaLWo?si=gbCwnBk--UXZ7gw0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div class="prev"><i class="fa-solid fa-angle-right prev-arrow"></i></div>
+            <div class="next"><i class="fa-solid fa-angle-right"></i></div>
+        </div>
+        <div class="content-list">
+            <h1>월해클립</h1>
+            <div class="slider">
+
+                <div class="item"><video  src="./vdo/65eadf303de8085f-1.mp4" alt=""></div>
+                <div class="item"><video  src="./vdo/778e10dffc786fb9.mp4" alt=""></div>
+                <div class="item"><video  src="./vdo/bb8679579eec519c.mp4" alt=""></div>
+                <div class="item"><video  src="./vdo/1대마월.mp4" alt=""></div>    
+                <div class="item"><video  src="./vdo/2친없월.mp4" alt=""></div>   
+                <div class="item"><video  src="./vdo/3시끄러.mp4" alt=""></div>       
+                <div class="item"><video  src="./vdo/4사람이_아닌월.mp4" alt=""></div>
+                <div class="item"><video  src="./vdo/5클립_지우는_클립.mp4" alt=""></div>      
+                <div class="item"><video  src="./vdo/6진정해.mp4" alt=""></div>
+                <div class="item"><video  src="./vdo/7클립_만들기.mp4" alt=""></div>
+                <div class="item"><video  src="./vdo/8넷상_감염.mp4" alt=""></div>
+                <div class="item"><video  src="./vdo/9확진자_주제에.mp4" alt=""></div>
+                <div class="item"><video  src="./vdo/10캌퇴.mp4" alt=""></div>
+                <div class="item"><video  src="./vdo/11바보월.mp4" alt=""></div>
+                <div class="item"><video  src="./vdo/12나름_소곤소곤.mp4" alt=""></div>
+                <div class="item"><video  src="./vdo/wogawoga.mp4" alt=""></div>
+                <div class="item"><video  src="./vdo/wogawoga.mp4" alt=""></div>
+
+
+
+            </div>
+            <div class="prev"><i class="fa-solid fa-angle-right prev-arrow"></i></div>
+            <div class="next"><i class="fa-solid fa-angle-right"></i></div>
+        </div>
+    </section>
+    <footer>
+        <div class="wrap">
+            <div class="social-icons">
+                <i class="fa-brands fa-facebook-square"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-youtube"></i>
+            </div>
+            <div class="options">
+                <div class="option">스</div>
+                <div class="option">트</div>
+                <div class="option">리</div>
+                <div class="option">머</div>
+                <div class="option">월</div>
+                <div class="option">해</div>
+                <div class="option">트</div>
+                <div class="option">위</div>
+                <div class="option">치</div>
+                <div class="option">바</div>
+                <div class="option">로</div>
+                <div class="option">가</div>
+                <div class="option">기</div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    
+    <script>
+        const next = document.querySelectorAll('.next');
+        const prev = document.querySelectorAll('.prev');
+        const videoContainers = document.querySelectorAll('.slider') // slider -> videoContainer로 변경
+    
+        for (let i = 0; i < videoContainers.length; i++) {
+            getMovies(videoContainers[i], i + 1);
+            makeSlider(videoContainers[i], prev[i], next[i]);
+        }
+    
+        function makeSlider(element, prev, next) {
+            next.addEventListener('click', () => {
+                const offsetX = element.offsetWidth;
+                element.scrollBy(offsetX, 0)
+            })
+            prev.addEventListener('click', () => {
+                const offsetX = element.offsetWidth;
+                element.scrollBy(-offsetX, 0)
+            })
+        }
+    
+        function getMovies(element, page) {
+            fetch(`//https://yts.mx/api/v2/list_movies.json?limit=20&sort_by=rating&page=${page}`)
+                .then(data => data.json())
+                .then(data => {
+                    const movies = data.data.movies;
+                    movies.forEach(movie => {
+                        const div = document.createElement('div');
+                        div.className = 'item';
+                        div.innerHTML = `<img src="${movie.medium_cover_image}" alt="">`;
+                        element.appendChild(div);
+                    })
+                })
+        }
+    </script>
+
+
+
+
+        
+        </body>
+</html>
