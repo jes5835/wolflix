@@ -69,10 +69,37 @@
               김월해는 넷상 감염에 대하여 얘기하는데..,
             </p>
             <div class="buttons">
-                <button class="play"><i class="fa-solid fa-play"></i><span>재생</span></button>
-                <button class="detail"><i class="fa-solid fa-circle-info"></i>상세 정보</button>
+                <button class="play" onclick="openPopup()"><i class="fa-solid fa-play"></i><span>재생</span></button>
+                <button class="detail" onclick="openPopup()"><i class="fa-solid fa-circle-info"></i>상세 정보</button>
             </div>
         </div>
+
+
+        <div class="popup" id="videoPopup">
+           
+            <span onclick="closePopup()"><button>닫기</button></span>
+            <span>넷상 감염을 주장하는 월!</span>
+            <video controls autoplay loop>
+              <source src="./vdo/8넷상_감염.mp4
+              " type="video/mp4">
+              
+            </video>
+          </div>
+
+
+        <script>
+            // 팝업 열기 함수
+            function openPopup() {
+              document.getElementById('videoPopup').style.display = 'block';
+            }
+        
+            // 팝업 닫기 함수
+            function closePopup() {
+              document.getElementById('videoPopup').style.display = 'none';
+            }
+          </script>
+        
+
         <div class="age-info">
             <i class="fa-solid fa-rotate-right"></i>
             <div class="age">15+</div>
@@ -84,15 +111,10 @@
             <div class="slider">
                 <script>
                     const videoData = [
-                      { videoSrc: "./vdo/wogawoga.mp4", alt: "Video 1" },
-                      { videoSrc: "./vdo/2314689aac311642.mp4", alt: "Video 2" },
-                      { videoSrc: "./vdo/65eadf303de8085f-1.mp4", alt: "Video 3" },
-                      { videoSrc: "./vdo/778e10dffc786fb9.mp4", alt: "Video 4" },
-                      { videoSrc: "./vdo/bb8679579eec519c.mp4", alt: "Video 5" },
                       { videoSrc: "./vdo/1대마월.mp4", alt: "Video 6" },
                       { videoSrc: "./vdo/2친없월.mp4", alt: "Video 7" },
                       { videoSrc: "./vdo/3시끄러.mp4", alt: "Video 8" },
-                      { videoSrc: "./vdo/4사람이_아닌월.mp4", alt: "Video 9" },
+                     
                       { videoSrc: "./vdo/5클립_지우는_클립.mp4", alt: "Video 10" },
                       { videoSrc: "./vdo/6진정해.mp4", alt: "Video 11" },
                       { videoSrc: "./vdo/7클립_만들기.mp4", alt: "Video 12" },
@@ -100,8 +122,15 @@
                       { videoSrc: "./vdo/9확진자_주제에.mp4", alt: "Video 14" },
                       { videoSrc: "./vdo/10캌퇴.mp4", alt: "Video 15" },
                       { videoSrc: "./vdo/11바보월.mp4", alt: "Video 16" },
+                      { videoSrc: "./vdo/4사람이_아닌월.mp4", alt: "Video 9" },
                       { videoSrc: "./vdo/12나름_소곤소곤.mp4", alt: "Video 17" },
 
+                      { videoSrc: "./vdo/wogawoga.mp4", alt: "Video 1" },
+                      { videoSrc: "./vdo/2314689aac311642.mp4", alt: "Video 2" },
+                      { videoSrc: "./vdo/65eadf303de8085f-1.mp4", alt: "Video 3" },
+                      { videoSrc: "./vdo/778e10dffc786fb9.mp4", alt: "Video 4" },
+                      { videoSrc: "./vdo/bb8679579eec519c.mp4", alt: "Video 5" },
+                     
                       // video추가
                     ];
                   
@@ -151,7 +180,7 @@
             <div class="prev"><i class="fa-solid fa-angle-right prev-arrow"></i></div>
             <div class="next"><i class="fa-solid fa-angle-right"></i></div>
         </div>
-        <div class="content-list">
+        <div class="content-list">a
             <h1>풀영상</h1>
             <div class="slider">
                 <iframe width="13%" src="https://www.youtube.com/embed/d63aVzLihVY?si=t8ri0ktEH51KtV6h" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -161,26 +190,16 @@
             <div class="next"><i class="fa-solid fa-angle-right"></i></div>
         </div>
         <div class="content-list">
-            <h1>월해클립</h1>
+            <h1>월뮤비</h1>
             <div class="slider">
+                
 
-                <div class="item"><video  src="./vdo/65eadf303de8085f-1.mp4" alt=""></div>
+
+                <div class="item"><video  src="./vdo/wogawoga.mp4" alt=""></div>
+                <div class="item"><video  src="./vdo/2314689aac311642.mp4" alt=""></div>
+                <div class="item"><video  src="./vdo/65eadf303de8085f.mp4" alt=""></div>
                 <div class="item"><video  src="./vdo/778e10dffc786fb9.mp4" alt=""></div>
                 <div class="item"><video  src="./vdo/bb8679579eec519c.mp4" alt=""></div>
-                <div class="item"><video  src="./vdo/1대마월.mp4" alt=""></div>    
-                <div class="item"><video  src="./vdo/2친없월.mp4" alt=""></div>   
-                <div class="item"><video  src="./vdo/3시끄러.mp4" alt=""></div>       
-                <div class="item"><video  src="./vdo/4사람이_아닌월.mp4" alt=""></div>
-                <div class="item"><video  src="./vdo/5클립_지우는_클립.mp4" alt=""></div>      
-                <div class="item"><video  src="./vdo/6진정해.mp4" alt=""></div>
-                <div class="item"><video  src="./vdo/7클립_만들기.mp4" alt=""></div>
-                <div class="item"><video  src="./vdo/8넷상_감염.mp4" alt=""></div>
-                <div class="item"><video  src="./vdo/9확진자_주제에.mp4" alt=""></div>
-                <div class="item"><video  src="./vdo/10캌퇴.mp4" alt=""></div>
-                <div class="item"><video  src="./vdo/11바보월.mp4" alt=""></div>
-                <div class="item"><video  src="./vdo/12나름_소곤소곤.mp4" alt=""></div>
-                <div class="item"><video  src="./vdo/wogawoga.mp4" alt=""></div>
-                <div class="item"><video  src="./vdo/wogawoga.mp4" alt=""></div>
 
 
 
