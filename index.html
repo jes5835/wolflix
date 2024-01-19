@@ -9,6 +9,32 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="index.css">
+
+
+    
+    <link rel="shortcut icon" href="/img/fav/wf1.png" type="image/x-icon">
+    <link id= "favicon" rel="icon" href="#" type="image/x-icon">
+    <!--...-->
+
+    <script>
+      // favicon
+        var faviconRoute = '/img/fav/';
+        var faviconNames = ['wf1.png', 'wf2.png', 'wf3.png', 'wf4.png', 'wf5.png']; 
+        var idx = 0;
+    
+        setInterval(func, 300);
+    
+        function func() {
+            document.querySelector("#favicon").setAttribute('href', faviconRoute + faviconNames[idx++]);
+            idx %= faviconNames.length;
+        }
+    </script>
+
+
+
+
+
+
 </head>
 <body>
     <script src="script.js"></script>
