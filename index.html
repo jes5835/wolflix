@@ -11,26 +11,25 @@
     <link rel="stylesheet" href="index.css">
 
 
+   
+        <link rel="shortcut icon" href="/img/fav/wf1.png" type="image/x-icon">
+        <link id= "favicon" rel="icon" href="#" type="image/x-icon">
+        <!--...-->
     
-    <link rel="shortcut icon" href="/img/fav/wf1.png" type="image/x-icon">
-    <link id= "favicon" rel="icon" href="#" type="image/x-icon">
-    <!--...-->
-
-    <script>
-      // favicon
-        var faviconRoute = '/img/fav/';
-        var faviconNames = ['wf1.png', 'wf2.png', 'wf3.png', 'wf4.png', 'wf5.png']; 
-        var idx = 0;
-    
-        setInterval(func, 300);
-    
-        function func() {
-            document.querySelector("#favicon").setAttribute('href', faviconRoute + faviconNames[idx++]);
-            idx %= faviconNames.length;
-        }
-    </script>
-
-
+        <script>
+          // favicon
+            var faviconRoute = '/assets/favicon/';
+            var faviconNames = ['wf1.png', 'wf2.png', 'wf3.png', 'wf4.png', 'wf5.png']; 
+        
+            var idx = 0;
+        
+            setInterval(func, 300);
+        
+            function func() {
+                document.querySelector("#favicon").setAttribute('href', faviconRoute + faviconNames[idx++]);
+                idx %= faviconNames.length;
+            }
+        </script>
 
 
 
