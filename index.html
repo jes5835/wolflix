@@ -85,7 +85,7 @@
     </nav>
     <main>
         <div class="video">
-            <video class="bv" src="./vdo/8넷상_감염.mp4" autoplay muted loop></video>
+            <video class="bv" src="./vdo/8넷상_감염.mp4" autoplay mute loop></video>
         </div>
         <div class="description">
             <h1>넷상감염</h1>
@@ -98,6 +98,36 @@
                 <button class="detail" onclick="openPopup()"><i class="fa-solid fa-circle-info"></i>상세 정보</button>
             </div>
         </div>
+
+        <div class="popup" id="videoPopup">
+
+            <span onclick="closePopup()"><button>닫기</button></span>
+            <span>넷상 감염을 주장하는 월!</span>
+            <video controls autoplay loop>
+              <source src="./vdo/8넷상_감염.mp4
+              " type="video/mp4">
+
+            </video>
+          </div>
+
+
+        <script>
+            // 팝업 열기 함수
+            function openPopup() {
+              document.getElementById('videoPopup').style.display = 'block';
+            }
+
+            // 팝업 닫기 함수
+            function closePopup() {
+              document.getElementById('videoPopup').style.display = 'none';
+            }
+          </script>
+
+
+
+
+
+
         <div class="age-info">
             <i class="fa-solid fa-rotate-right"></i>
             <div class="age">15+</div>
